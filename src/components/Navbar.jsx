@@ -11,8 +11,8 @@ const Navbar = () => {
                 <div className="d-inline-flex justify-content-end align-items-right">
                     <a className="navbar-brand" href="#">Login</a>
                     <a className="navbar-brand" href="#">
-                        {/* <a href="https://www.flaticon.com/free-icons/commerce-and-shopping" title="commerce and shopping icons">Commerce and shopping icons created by Fauzi Arts - Flaticon</a> */}
-                        <image src={shoppingCart} alt="Shopping Cart" style={{ width: '16px', height: '16px' }} className="img-fluid"/>
+                        {/* <image src={shoppingCart} alt="Shopping Cart" style={{ width: '16px', height: '16px' }} className="img-fluid"/> */}
+                    Cart
                     </a>
                 </div>
                 
