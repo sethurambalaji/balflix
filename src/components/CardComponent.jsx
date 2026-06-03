@@ -17,19 +17,20 @@ const prod =   {
     "updatedAt": "2024-03-19T06:54:39.277Z",
     "__v": 0
   }
-const App = () => (
+const CardComponent= () => { 
+  return(
   <Card
     hoverable
-    style={{ width: 250,height: 400 }}
+    style={{ width: 300,height: 400 }}
     cover={
       <img
         draggable={false}
         alt="example"
         src={prod.image}
-        style={{ width: 250,height: 200, objectFit: 'cover'}}
+        style={{ width: 300,height: 200, objectFit: 'cover',alignSelf: 'center' }}
       />
     }
-    className="align-center justify-content-center m-auto border-solid border-2 border-gray-300 rounded-lg shadow-lg"
+    className="m-auto border-solid border-2 border-gray-300 rounded-lg shadow-lg"
   >
     <Meta title={prod.name} description={`Ticket Price: Rs.${prod.ticketprice}`} className="mb-1 text-center font-bold" />
     <div className="card-body">
@@ -42,5 +43,6 @@ const App = () => (
     </Flex>
   </div>
   </Card>
-);
-export default App;
+)
+};
+export default CardComponent;

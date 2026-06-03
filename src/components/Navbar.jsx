@@ -3,7 +3,7 @@ import React from 'react'
 import shoppingCart from '../images/shopping-cartt.png';
 // import shoppingCart from '../images/cart.png';
 const Navbar = () => {
-  return (
+  return(
     <div>
         <nav className="navbar navbar-dark bg-dark sticky-top">
             <div className="container-fluid">
