@@ -18,12 +18,12 @@ const MoviesList = () => {
 
   return (
     
-    <div className="container mx-auto my-4">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div className="container mx-auto background-gray-100 p-4">
+        <div className="row row-cols-1 row-cols-md-4 g-4 d-flex flex-wrap align-items-start" style={{ marginTop: '10px' }}>
             
             {movies.map((card, index) => (
-                <div class="col" key={index}>
-                    <CardComponent prod={card} />
+                <div className="col" key={index}>
+                    <CardComponent prod={card} className="border-solid border-5"/>
                 </div>
             ))}
         </div>
