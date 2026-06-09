@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Card,Button, Flex} from 'antd';
+import { NavLink } from 'react-router-dom';
 const { Meta } = Card;
 
 const CardComponent= (props) => {
@@ -22,10 +23,17 @@ const CardComponent= (props) => {
     <div className="card-body my-2">
         <Flex vertical gap="small" style={{ width: '100%' }}>
     
-    <Button type="primary" block>
-      View Details
-    </Button>
-    <Button danger>Add to Cart</Button>
+    <NavLink to={`/product/${prod.id}`} style={{ textDecoration: 'none' }}>
+      <Button type="primary" block className="text-white">
+        View Details
+      </Button>
+    </NavLink>
+
+    <NavLink to="/cart" style={{ textDecoration: 'none' }}>
+      <Button danger block>
+        Add to Cart
+      </Button>
+    </NavLink>
     </Flex>
   </div>
   </Card>

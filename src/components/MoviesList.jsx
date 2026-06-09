@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import CardComponent from "../components/CardComponent";
 import React, { useEffect ,useState} from 'react'
 
@@ -6,7 +7,7 @@ const MoviesList = () => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        // Simulate an API call to fetch movies
+        
         const fetchMovies = async () => {
             const response = await fetch('https://backend-crud-one.vercel.app/product');
             const data = await response.json();
@@ -23,7 +24,7 @@ const MoviesList = () => {
             
             {movies.map((card, index) => (
                 <div className="col" key={index}>
-                    <CardComponent prod={card} className="border-solid border-5"/>
+                        <CardComponent prod={card} className="border-solid border-5"/>
                 </div>
             ))}
         </div>

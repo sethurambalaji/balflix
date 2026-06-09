@@ -1,7 +1,5 @@
 import React from 'react'
 
-import shoppingCart from '../images/shopping-cartt.png';
-// import shoppingCart from '../images/cart.png';
 const Navbar = () => {
   return(
     <div>

@@ -1,9 +1,14 @@
 import React from 'react'
+import Navbar from '../components/common/Navbar';
+import MoviesList from '../components/MoviesList';
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
+    <>
+     <Navbar />
+     <MoviesList />
+    </>
+  )  
 }
 
 export default Home;

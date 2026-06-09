@@ -1,14 +1,19 @@
 
 import './App.css';
-import Navbar from './components/Navbar';
-import MoviesList from './components/MoviesList';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Cart from './pages/Cart';  
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   return (
-    <>
-      <Navbar/>
-      <MoviesList/>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/cart" element={<Cart/>} />
+        <Route path="/product/:id" element={<ProductDetail/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
