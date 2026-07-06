@@ -2,6 +2,7 @@ import React from 'react';
 import { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Image,Divider,Button } from 'antd';
 
 const ProductDetail = () => {
   const[movie,setMovie]=useState();
@@ -21,11 +22,25 @@ const ProductDetail = () => {
   },movie);
   
   return (
-    <div>
-        <h1>Movie Name: {movie?.title}</h1>
+    <div className="container mt-5">
+      <div className="row">
+        <div className="col-md-4">
+            <Image
+              width={300}
+              height={450}
+              alt="basic"
+              src={movie?.image}
+            />
+        </div>
+        <div className="col-md-8">
+            
+            <h1>{movie?.title}</h1>
+            <Divider/>
+            <h3>Director: {movie?.director}</h3>
+            <p>{movie?.description}</p>
+        </div>
+      </div>
     </div>
-
-
   )
 }
 
