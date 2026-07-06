@@ -15,12 +15,12 @@ const MoviesList = () => {
         };
 
         fetchMovies();
-    }, [movies]);
+    }, []);
 
   return (
     
     <div className="container mx-auto background-gray-100 p-4">
-        <div className="row row-cols-1 row-cols-md-4 g-4 d-flex flex-wrap align-items-start" style={{ marginTop: '10px' }}>
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-5 d-flex flex-wrap align-items-start" style={{ marginTop: '10px' }}>
             
             {movies.map((card, index) => (
                 <div className="col" key={index}>

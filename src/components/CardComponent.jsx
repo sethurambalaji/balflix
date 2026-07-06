@@ -23,7 +23,7 @@ const CardComponent= (props) => {
     <div className="card-body my-2">
         <Flex vertical gap="small" style={{ width: '100%' }}>
     
-    <NavLink to={`/product/${prod.id}`} style={{ textDecoration: 'none' }}>
+    <NavLink to={`/product/${prod._id}`} style={{ textDecoration: 'none' }} state={{ product: prod }}>
       <Button type="primary" block className="text-white">
         View Details
       </Button>
