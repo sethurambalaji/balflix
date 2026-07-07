@@ -4,10 +4,10 @@ import MoviesList from '../components/MoviesList';
 
 const Home = () => {
   return (
-    <>
+    <div>
      <Navbar />
      <MoviesList />
-    </>
+    </div>
   )  
 }
 
