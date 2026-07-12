@@ -8,13 +8,13 @@ const CardComponent= (props) => {
   return(
   <Card
     hoverable
-    style={{ width: 210,height: 500,backgroundColor: 'lightgray', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+    style={{ width: 210,height: 400,backgroundColor: 'lightgray', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
     cover={
       <img
         draggable={false}
         alt="example"
         src={prod.image}
-        style={{ width: 200,height: 300, objectFit: 'fill',alignSelf: 'center',margin:'0',borderRadius: '8px' }}
+        style={{ width: 150,height: 200, objectFit: 'fill',justifySelf: 'anchor-center',margin:'0',borderRadius: '8px' }}
       />
     }
     className="m-auto border-solid border-5 border-300 rounded-lg shadow-lg"
