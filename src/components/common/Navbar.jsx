@@ -40,7 +40,7 @@ const Navbar = () => {
                             </Space>
                         </a>
                     
-                        <a className="navbar-brand p-2" href="#" alt="Shopping Cart">
+                        <a className="navbar-brand p-2" href="/cart" alt="Shopping Cart">
                             <Space>                           
                                 <Badge size="large" count={1} style={{position:'absolute',left:'15px'}}>
                                     <ShoppingCartOutlined style={{ fontSize: '24px', color: '#FDF4AF' }} />
