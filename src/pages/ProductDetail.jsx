@@ -5,9 +5,11 @@ import axios from 'axios';
 import { Image,Divider } from 'antd';
 import Navbar from '../components/common/Navbar';
 
+
 const ProductDetail = () => {
   const[movie,setMovie]=useState();
   const{id}=useParams();
+
   
   useEffect(() => {
     const fetchData = async() => {
