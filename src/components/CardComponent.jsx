@@ -9,7 +9,7 @@ const CardComponent= (props) => {
   <NavLink to={`/product/${prod._id}`} style={{ textDecoration: 'none' }} state={{ product: prod }}>
   <Card
     hoverable
-    style={{ width: 210,height: 400,background: 'linear-gradient(to bottom, #FFD400, #FFC300,#FF8C00,#FF5F00)', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}
+    style={{ width: 210,height: 370,background: 'linear-gradient(to bottom, #FFD400, #FFC300,#FF8C00,#FF5F00)', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}
     cover={
       <img
         draggable={false}
