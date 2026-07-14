@@ -5,7 +5,7 @@ import logo from '../../images/balflix_icon.png';
 
 const Navbar = () => {
   return(
-    <div className='my-0'>
+    <div className='my-0 sticky-top'>
         <nav className="navbar navbar-dark sticky-top py-0 " style={{backgroundColor:'#101D30',color:'#FDF4AF'}}>
             <div className="container-fluid " style={{backgroundColor:'##101D30',color:'#FDF4AF'}}>
                 <a className="navbar-brand" href="#">
