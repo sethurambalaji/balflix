@@ -4,6 +4,7 @@ import { Space,Badge,Tooltip,Button } from 'antd';
 import logo from '../../images/balflix_icon.png';
 import { NavLink } from 'react-router-dom';
 import Home from '../../pages/Home';
+import Login from '../../pages/Login';
 
 const Navbar = () => {
   return(
@@ -36,11 +37,11 @@ const Navbar = () => {
                     </div>
                     <div className="d-inline-flex justify-content-end align-items-right" 
                         style={{paddingRight:'40px',marginLeft:'auto'}}>
-                        <a className="navbar-brand p-2" href="#" alt="Login">
+                        <NavLink className="navbar-brand p-2" to="/login" alt="Login" component={Login}>
                             <Space>
                                 <LoginOutlined style={{ fontSize: '24px', color: '#FDF4AF' }} />
                             </Space>
-                        </a>
+                        </NavLink>
                     
                         <a className="navbar-brand p-2" href="/cart" alt="Shopping Cart">
                             <Space>                           
