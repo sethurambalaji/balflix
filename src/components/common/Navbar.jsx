@@ -5,6 +5,7 @@ import logo from '../../images/balflix_icon.png';
 import { NavLink } from 'react-router-dom';
 import Home from '../../pages/Home';
 import Login from '../../pages/Login';
+import Cart from '../../pages/Cart';
 
 const Navbar = () => {
   return(
@@ -43,13 +44,13 @@ const Navbar = () => {
                             </Space>
                         </NavLink>
                     
-                        <a className="navbar-brand p-2" href="/cart" alt="Shopping Cart">
+                        <NavLink className="navbar-brand p-2" to="/cart" alt="Shopping Cart" component={Cart}>
                             <Space>                           
                                 <Badge size="large" count={1} style={{position:'absolute',left:'15px'}}>
                                     <ShoppingCartOutlined style={{ fontSize: '24px', color: '#FDF4AF' }} />
                                 </Badge>
                             </Space>
-                        </a>
+                        </NavLink>
                     </div>
                 </div>
             </div>
