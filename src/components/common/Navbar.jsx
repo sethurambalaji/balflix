@@ -2,13 +2,15 @@ import React from 'react';
 import {LoginOutlined,ShoppingCartOutlined,SearchOutlined } from '@ant-design/icons';
 import { Space,Badge,Tooltip,Button } from 'antd';
 import logo from '../../images/balflix_icon.png';
+import { NavLink } from 'react-router-dom';
+import Home from '../../pages/Home';
 
 const Navbar = () => {
   return(
     <div className='my-0'>
         <nav className="navbar navbar-dark sticky-top py-0 " style={{backgroundColor:'#101D30',color:'#FDF4AF'}}>
             <div className="container-fluid " style={{backgroundColor:'##101D30',color:'#FDF4AF'}}>
-                <a className="navbar-brand" href="#">
+                <NavLink className="navbar-brand" to="/" component={Home}>
                     <img 
                         src={logo} 
                         alt="custom-icon" 
@@ -19,7 +21,7 @@ const Navbar = () => {
                             paddingLeft:'0'
                         }}
                     />
-                </a>
+                </NavLink>
 
                 <div>
                     <div className="d-inline-flex justify-content-start" style={{padding:'1rem'}}>
