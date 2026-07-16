@@ -7,6 +7,9 @@ const Cart = () => {
   const data = cartItems.map((item, index) => ({
     key: index,
     name: item.name,
+    quantity: item.quantity,
+    ticketprice: item.ticketprice,
+    totalPrice: (item.ticketprice * item.quantity).toFixed(2),
   }));
   const columns = [
   {
@@ -15,20 +18,20 @@ const Cart = () => {
     key: 'name',
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
+    title: 'Ticket Price',
+    dataIndex: 'ticketprice',
+    key: 'ticketprice',
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
+    title: 'Quantity',
+    dataIndex: 'quantity',
+    key: 'quantity',
   },
   {
-    title: 'Tags',
-    key: 'tags',
-    dataIndex: 'tags',
-    }
+    title: 'Total Price',
+    dataIndex: 'totalPrice',
+    key: 'totalPrice',
+  },
 ];
   return (
     <div className="container">
