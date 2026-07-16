@@ -6,8 +6,10 @@ import { NavLink } from 'react-router-dom';
 import Home from '../../pages/Home';
 import Login from '../../pages/Login';
 import Cart from '../../pages/Cart';
+import cartDetails from '../../context/CartDetails';
 
 const Navbar = () => {
+  const cartItemLength = React.useContext(cartDetails).cartItems.length;
   return(
     <div className='my-0 sticky-top'>
         <nav className="navbar navbar-dark sticky-top py-0 " style={{backgroundColor:'#101D30',color:'#FDF4AF'}}>
@@ -46,7 +48,7 @@ const Navbar = () => {
                     
                         <NavLink className="navbar-brand p-2" to="/cart" alt="Shopping Cart" component={Cart}>
                             <Space>                           
-                                <Badge size="large" count={1} style={{position:'absolute',left:'15px'}}>
+                                <Badge size="large" count={cartItemLength} style={{position:'absolute',left:'15px'}}>
                                     <ShoppingCartOutlined style={{ fontSize: '24px', color: '#FDF4AF' }} />
                                 </Badge>
                             </Space>
