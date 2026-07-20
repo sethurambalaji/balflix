@@ -9,12 +9,20 @@ const Cart = () => {
     key: index,
     name: item.name,
     quantity: item.quantity,
-    ticketprice: item.ticketprice.toFixed(2),
+    ticketprice: item.ticketprice,
     totalPrice: (item.ticketprice * item.quantity).toFixed(2),
     image: item.image,
   }));
   const [totalPrice, setTotalPrice] = React.useState(data.reduce((acc, item) => acc + parseFloat(item.totalPrice), 0).toFixed(2));
   
+  const onQuantityChange = (item, newQuantity) => {
+    let index = data.findIndex((i) => i.key === item.key);   
+    data[index].quantity = newQuantity;
+    data[index].totalPrice = (item.ticketprice * newQuantity).toFixed(2)
+
+    setTotalPrice(data.reduce((acc, item) => acc + parseFloat(item.totalPrice), 0).toFixed(2));
+  }
+
   return (
     <div className="containerFluid">
         <Navbar />
@@ -47,7 +55,16 @@ const Cart = () => {
                       
                     </td>                    
                     <td className="border border-gray-300 px-4 py-2">${item.ticketprice}</td>
-                    <td className="border border-gray-300 px-4 py-2">{item.quantity}</td>
+                    <td className="border border-gray-300 px-4 py-2">                      
+                        <select class="form-select" aria-label="select example" onChange={(e) => onQuantityChange(item, parseInt(e.target.value))}>
+                          <option selected>{item.quantity}</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                    </td>
                     <td className="border border-gray-300 px-4 py-2">${item.totalPrice}</td>
                   </tr>
                 ))}
