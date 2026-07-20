@@ -1,18 +1,19 @@
 import React from 'react'
+import {useContext,useState} from 'react';
 import cartDetails from '../context/CartDetails';
 import Navbar from '../components/common/Navbar';
 
 const Cart = () => {
   const { cartItems, removeFromCart, addToCart } = React.useContext(cartDetails);
   
-  const data = cartItems.map((item, index) => ({
+  const [data, setData] = useState(cartItems.map((item, index) => ({
     key: index,
     name: item.name,
     quantity: item.quantity,
     ticketprice: item.ticketprice,
     totalPrice: (item.ticketprice * item.quantity).toFixed(2),
     image: item.image,
-  }));
+  })));
   const [totalPrice, setTotalPrice] = React.useState(data.reduce((acc, item) => acc + parseFloat(item.totalPrice), 0).toFixed(2));
   
   const onQuantityChange = (item, newQuantity) => {
@@ -20,6 +21,7 @@ const Cart = () => {
     data[index].quantity = newQuantity;
     data[index].totalPrice = (item.ticketprice * newQuantity).toFixed(2)
 
+    setData([...data]);
     setTotalPrice(data.reduce((acc, item) => acc + parseFloat(item.totalPrice), 0).toFixed(2));
   }
 
