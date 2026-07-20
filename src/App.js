@@ -18,6 +18,7 @@ function App() {
       name: item.name,
       title: item.title,
       ticketprice: item.ticketprice,
+      image: item.image,
     };
     if (!existingItem) {
       cartItem.quantity = 1;
