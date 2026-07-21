@@ -79,8 +79,8 @@ const Cart = () => {
                   </tr>
                 ))}
                   <tr>
-                    <td colSpan="3" className="border border-gray-300 px-4 py-2 text-right font-bold">Total:</td>
-                    <td className="border border-gray-300 px-4 py-2 font-bold">${totalPrice}</td>
+                    <td colSpan="3" className="border border-  px-4 py-2 text-right font-bold">Total:</td>
+                    <td className="border border-gray-300 px-4 py-2 text-bold">${totalPrice}</td>
                   </tr>
               </tbody>
             </table>
