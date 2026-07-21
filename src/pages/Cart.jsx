@@ -2,13 +2,15 @@ import React from 'react'
 import {useContext,useState} from 'react';
 import cartDetails from '../context/CartDetails';
 import Navbar from '../components/common/Navbar';
+import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
-  const { cartItems,setCartItems, removeFromCart, addToCart } = React.useContext(cartDetails);
+  const { cartItems,setCartItems, removeFromCart, addToCart } = useContext(cartDetails);
   
   const [data, setData] = useState(cartItems.map((item, index) => ({
     key: index,
     name: item.name,
+    _id:item._id,
     quantity: item.quantity,
     ticketprice: item.ticketprice,
     totalPrice: (item.ticketprice * item.quantity).toFixed(2),
@@ -48,20 +50,21 @@ const Cart = () => {
               <tbody>
                 {data.map((item) => (
                   <tr key={item.key}>
+
                     <td className="border border-gray-300 px-4 py-2">
-                      
+                      <NavLink to={`/product/${item._id}`} style={{ textDecoration: 'none' }} state={{ product: item }}>
                         <img
                           src={item.image}
                           alt={item.name}
                           style={{ width: '48px', height: '80px', objectFit: 'cover', marginRight: '10px' }}
                         />
-                      <span>{item.name}</span>
-                      
+                        <span>{item.name}</span>
+                      </NavLink>
                     </td>                    
                     <td className="border border-gray-300 px-4 py-2">${item.ticketprice}</td>
                     <td className="border border-gray-300 px-4 py-2">                      
                         <select class="form-select" aria-label="select example" onChange={(e) => onQuantityChange(item, parseInt(e.target.value))}>
-                          <option selected>{item.quantity}</option>
+                          <option selected className='bg-secondary'>{item.quantity}</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
