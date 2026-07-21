@@ -41,7 +41,7 @@ const Cart = () => {
           <p className="text-center" style={{justifySelf:'center'}}>Your cart is empty.</p>
         ) : (
           <div className=" overflow-x-auto p-4" style={{justifySelf:'center'}}>
-            <table className="table-auto w-full border-collapse border border-gray-300">
+            <table className="table-auto w-full border-collapse border border-5 rounded-3 border-black bg-white">
               <thead>
                 <tr>
                   <th className="border border-gray-300 px-4 py-2">Product</th>                  
