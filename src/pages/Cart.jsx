@@ -1,11 +1,14 @@
 import React from 'react'
 import {useContext,useState} from 'react';
 import cartDetails from '../context/CartDetails';
+import BackgroundColor from '../context/Style';
 import Navbar from '../components/common/Navbar';
 import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
   const { cartItems,setCartItems, removeFromCart, addToCart } = useContext(cartDetails);
+
+  const { backgroundImages } = React.useContext(BackgroundColor);
   
   const [data, setData] = useState(cartItems.map((item, index) => ({
     key: index,
@@ -32,7 +35,7 @@ const Cart = () => {
   return (
     <div className="containerFluid">
         <Navbar />
-        <div>
+        <div style={{background:backgroundImages, minHeight:'100vh'}}>
         <h1 style={{justifySelf:'center'}}>Your Cart</h1>
         {cartItems.length === 0 ? (
           <p className="text-center" style={{justifySelf:'center'}}>Your cart is empty.</p>
@@ -52,7 +55,7 @@ const Cart = () => {
                   <tr key={item.key}>
 
                     <td className="border border-gray-300 px-4 py-2">
-                      <NavLink to={`/product/${item._id}`} style={{ textDecoration: 'none' }} state={{ product: item }}>
+                      <NavLink to={`/product/${item._id}`} style={{ color:'black' ,textDecoration: 'underlined' }} state={{ product: item }}>
                         <img
                           src={item.image}
                           alt={item.name}

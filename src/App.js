@@ -39,7 +39,7 @@ function App() {
     }
     
   }
-  const backgroundImages = 'linear-gradient(to right, #95CCDD, #4274D9, #293681)';
+  const backgroundImages = 'linear-gradient(to right bottom, #95CCDD, #4274D9, #293681)';
 
   return (
     <BackgroundColor.Provider value={{ backgroundImages }}>
