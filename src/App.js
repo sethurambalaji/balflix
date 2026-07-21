@@ -43,7 +43,7 @@ function App() {
 
   return (
     <BackgroundColor.Provider value={{ backgroundImages }}>
-      <cartDetails.Provider value={{ cartItems, addToCart, removeFromCart: (item) => setCartItems(cartItems.filter((i) => i._id !== item._id)) }}>
+      <cartDetails.Provider value={{ cartItems,setCartItems, addToCart, removeFromCart: (item) => setCartItems(cartItems.filter((i) => i._id !== item._id)) }}>
       <BrowserRouter>
         <Routes>
         <Route path="/" element={<Home/>} />

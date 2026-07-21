@@ -4,7 +4,7 @@ import cartDetails from '../context/CartDetails';
 import Navbar from '../components/common/Navbar';
 
 const Cart = () => {
-  const { cartItems, removeFromCart, addToCart } = React.useContext(cartDetails);
+  const { cartItems,setCartItems, removeFromCart, addToCart } = React.useContext(cartDetails);
   
   const [data, setData] = useState(cartItems.map((item, index) => ({
     key: index,
@@ -23,6 +23,8 @@ const Cart = () => {
 
     setData([...data]);
     setTotalPrice(data.reduce((acc, item) => acc + parseFloat(item.totalPrice), 0).toFixed(2));
+
+    setCartItems(data);
   }
 
   return (
