@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import { DeleteOutlined } from '@ant-design/icons';
 
 const Cart = () => {
-  const { cartItems,setCartItems, removeFromCart, addToCart } = useContext(cartDetails);
+  const { cartItems,setCartItems} = useContext(cartDetails);
 
   const { backgroundImages } = React.useContext(BackgroundColor);
   
@@ -31,6 +31,22 @@ const Cart = () => {
     setTotalPrice(data.reduce((acc, item) => acc + parseFloat(item.totalPrice), 0).toFixed(2));
 
     setCartItems(data);
+  }
+
+  const removeFromCart = (item) =>{
+      console.log("items in cart:"+cartItems);
+      let index = cartItems.findIndex((i) => i._id===item._id );
+      cartItems.splice(index,1);
+      setCartItems(cartItems);
+
+      console.log("items removed in cart:"+cartItems);
+
+      console.log("items in cart data:"+data);
+      index = data.findIndex((i) => i._id===item._id );
+      data.splice(index,1);
+
+      setData(data);
+      console.log("items in cart data:"+data);
   }
 
   return (
@@ -77,7 +93,7 @@ const Cart = () => {
                           <option value="5">5</option>
                         </select>
                        
-                          <DeleteOutlined className='p-1' onClick={removeFromCart}/>
+                          <DeleteOutlined className='p-1' onClick={() => removeFromCart(item)}/>
                         
                         </div>
                     </td>

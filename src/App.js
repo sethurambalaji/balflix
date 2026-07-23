@@ -37,13 +37,13 @@ function App() {
 
       // setCartItems(oldCartItems);
     }
-    
   }
+
   const backgroundImages = 'linear-gradient(to right bottom, #95CCDD, #4274D9, #293681)';
 
   return (
     <BackgroundColor.Provider value={{ backgroundImages }}>
-      <cartDetails.Provider value={{ cartItems,setCartItems, addToCart, removeFromCart: (item) => setCartItems(cartItems.filter((i) => i._id !== item._id)) }}>
+      <cartDetails.Provider value={{ cartItems,setCartItems, addToCart}}>
       <BrowserRouter>
         <Routes>
         <Route path="/" element={<Home/>} />
