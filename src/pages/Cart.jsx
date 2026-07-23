@@ -4,6 +4,7 @@ import cartDetails from '../context/CartDetails';
 import BackgroundColor from '../context/Style';
 import Navbar from '../components/common/Navbar';
 import { NavLink } from 'react-router-dom';
+import { DeleteOutlined } from '@ant-design/icons';
 
 const Cart = () => {
   const { cartItems,setCartItems, removeFromCart, addToCart } = useContext(cartDetails);
@@ -65,7 +66,8 @@ const Cart = () => {
                       </NavLink>
                     </td>                    
                     <td className="border border-gray-300 px-4 py-2">${item.ticketprice}</td>
-                    <td className="border border-gray-300 px-4 py-2">                      
+                    <td className="border border-gray-300 px-4 py-2"> 
+                        <div className='d-flex flex-row p-1'>                     
                         <select class="form-select" aria-label="select example" onChange={(e) => onQuantityChange(item, parseInt(e.target.value))}>
                           <option selected className='bg-secondary'>{item.quantity}</option>
                           <option value="1">1</option>
@@ -74,13 +76,17 @@ const Cart = () => {
                           <option value="4">4</option>
                           <option value="5">5</option>
                         </select>
+                       
+                          <DeleteOutlined className='p-1' onClick={removeFromCart}/>
+                        
+                        </div>
                     </td>
                     <td className="border border-gray-300 px-4 py-2">${item.totalPrice}</td>
                   </tr>
                 ))}
                   <tr>
                     <td colSpan="3" className="border border-  px-4 py-2 text-right font-bold">Total:</td>
-                    <td className="border border-gray-300 px-4 py-2 text-bold">${totalPrice}</td>
+                    <td className="border border-gray-300 px-4 py-2" style={{fontWeight:'bolder'}}>${totalPrice}</td>
                   </tr>
               </tbody>
             </table>

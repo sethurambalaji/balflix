@@ -27,15 +27,15 @@ function App() {
       
     }
     else{
-      cartItem.quantity = existingItem.quantity + 1;
-      cartItem.totalPrice = existingItem.totalPrice + item.ticketprice;
+      // cartItem.quantity = existingItem.quantity + 1;
+      // cartItem.totalPrice = existingItem.totalPrice + item.ticketprice;
 
-      let index = cartItems.findIndex((i) => i._id === item._id);
+      // let index = cartItems.findIndex((i) => i._id === item._id);
 
-      let oldCartItems = [...cartItems];
-      oldCartItems.splice(index,1,cartItem);
+      // let oldCartItems = [...cartItems];
+      // oldCartItems.splice(index,1,cartItem);
 
-      setCartItems(oldCartItems);
+      // setCartItems(oldCartItems);
     }
     
   }
